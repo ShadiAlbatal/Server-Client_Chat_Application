@@ -1,5 +1,6 @@
 import unittest
 import socket
+import datetime
 
 class Test_server (unittest.TestCase):
 
@@ -15,7 +16,9 @@ class Test_server (unittest.TestCase):
         CONNECTION.send(MESSAGE.encode())
         rec = CONNECTION.recv(1024).decode()
         CONNECTION.close()
+
         self.assertEqual(MESSAGE, "Shadi")
+        print(str(datetime.datetime.now()))
 
 
 if __name__ == '__main__':
